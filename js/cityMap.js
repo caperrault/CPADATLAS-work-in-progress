@@ -94,7 +94,7 @@ d3.json("CPAD_percity.json", function(err, ca) {
       .attr("y", function(d) { return - 2 * radius(d); })
       .attr("dy", "1.3em")
       .style("text-anchor", "middle")
-      .text(d3.format(".1s"));
+      .text(function (d) {return d3.format(".1s")(d/3);});
 
   var legendPop = d3.select("#cityMapSvg")
       .append("g")
@@ -103,7 +103,7 @@ d3.json("CPAD_percity.json", function(err, ca) {
       .attr("class", "legend")
       .attr("transform", "translate(" + 30 + "," + (height - 80) + ")")
       .selectAll("g")
-      .data([0, 4e3])
+      .data([37e3, 100e3])
       .enter()
       .append("g")
       .style("display", "none");
@@ -116,7 +116,7 @@ d3.json("CPAD_percity.json", function(err, ca) {
       .attr("y", function(d) { return - 2 * radius(d); })
       .attr("dy", "1.3em")
       .style("text-anchor", "middle")
-      .text(d3.format(".1s"));
+      .text(function (d) {return d3.format(".1s")(d/30);});
 
 d3.selectAll(".radioCity").on("change", function(){
 
