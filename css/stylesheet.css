@@ -28,7 +28,8 @@ h2 {
 }
 
 .content {
-  padding-right: 50%;
+  /*padding-right: 50%;*/
+  width: 500px;
   padding-top: 10px;
 }
 
@@ -265,7 +266,8 @@ border-left: 1px dotted lightGray;
 }
 
 #countyPies {
-  float:right
+  float:left
+  margin-left: 40 px;
 }
 
 #cityTabs {
@@ -324,7 +326,8 @@ border-left: 1px dotted lightGray;
 }
 
 #cityPies {
-  float:right
+  float:left
+  margin-left: 40 px;
 }
 
 .hide{
