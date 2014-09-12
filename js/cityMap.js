@@ -85,6 +85,7 @@ d3.json("CPAD_percity.json", function(err, ca) {
   });
   d3.selectAll("path").call(zoom);
 
+
   /*function center() {
        var theGraph = d3.select("#cityMapSvg");
        zoom.translate([0, 0]);
