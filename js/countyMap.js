@@ -11,6 +11,47 @@ function countyClass(name) {
     .transition().duration(300);
 }
 
+/*d3.json("caFields10.json", function(err, ca) {
+
+  var projection = d3.geo.albers()
+      .translate([70, 210])
+      .scale(2700)
+      .rotate([122.4183, 0])
+      .center([0, 37.7750]);
+
+  var svg = d3.select("#countyMapSvg");
+
+  var group = svg.selectAll('g')
+          .data(topojson.feature(ca, ca.objects.counties2).features)
+          .enter()
+          .append('g')
+
+  var path2 = d3.geo.path().projection(projection);
+
+  var counties2 = group.append("path")
+            .attr("d",path2)
+            .attr("class", "Mcounty")
+            .classed("geo", true)
+            .style("opacity", 0)
+            .on("mouseover", function(d) {
+            div.transition().duration(300).style("opacity", 1);
+            div.text(d.properties.name+" County")
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY -30) + "px");})
+            .on("mouseout", function (d) { div.transition().duration(300).style("opacity", 0);})
+            .on("click", function(d) {
+            selectedCounty = d.properties.name;
+            countyClass(d.properties.name);
+            updateCountyPie1(d.properties.name);
+            updateCountyPie2(d.properties.name);
+            updateCountyName(d.properties.name);
+            updateCountyTot(d3.format(",")(d.properties.ac_tot));
+            updateCountyInh(d3.format(",")(d.properties.POP_NORM));
+        });
+
+});*/
+
+
 d3.json("caFields9.json", function(err, ca) {
 
   var div = d3.select("body").append("div")
@@ -111,6 +152,7 @@ else if (document.getElementById("POP_NORMCounty").checked) {
         counties.transition().duration(250)
              .style("fill", function (d) {return colorPOP(d.properties.POP_NORM);});
         svg.transition().duration(300).style("display", null);
+        d3.selectAll(".selectedCounty").style("fill", "#EF8B6C");
              }
            });
 
@@ -118,7 +160,6 @@ else if (document.getElementById("POP_NORMCounty").checked) {
             .attr("d",path)
             .attr("class", "Mcounty")
             .classed("geo", true)
-            .style("fill", "LightGray")
             .on("mouseover", function(d) {
             div.transition().duration(300).style("opacity", 1);
             div.text(d.properties.name+" County")

@@ -40,13 +40,12 @@ h3 {
   stroke:grey;
   stroke-width: 0.5px;
   fill-opacity: 1;
-  z-index: 2;
+  fill: LightGray;
 }
 
 .Mcounty.selectedCounty {
     fill-opacity: 0.3;
     stroke-width: 0px;
-    z-index: 1;
 }
 
 .Mcity {
@@ -56,14 +55,22 @@ stroke-width: .5px;
 
 .Mcity.selectedCity {
     fill-opacity: 1;
-    stroke-width: 1px;
-    stroke: red;
+    stroke-width: 3px;
+    stroke: #EF8B6C;
 }
 
 /*.bubble {
   fill-opacity: .5;
   stroke-width: .5px;
 }*/
+
+#UI {
+    width:20%;
+    max-width:200px;
+    left:0px;
+    position:relative;
+    padding-right:1%
+}
 
 .previousCountyName {
   background: white;
