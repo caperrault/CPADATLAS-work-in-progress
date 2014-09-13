@@ -74,7 +74,7 @@ d3.json("CPAD_percity.json", function(err, ca) {
       updateCityInh(d3.format(",")(d.properties.POP_NORM));
       });
 
-  var zoom = d3.geo.zoom()
+  /*var zoom = d3.geo.zoom()
   .projection(projection)
   .scaleExtent([projection.scale(), projection.scale() * 4])
   .on("zoom.redraw", function() {
@@ -83,8 +83,7 @@ d3.json("CPAD_percity.json", function(err, ca) {
     svg.selectAll(".Mcity")
     .attr("transform", function(d) { return "translate(" + cityPoints.centroid(d) + ")"; })
   });
-  d3.selectAll("path").call(zoom);
-
+  d3.selectAll("path").call(zoom);*/
 
   /*function center() {
        var theGraph = d3.select("#cityMapSvg");
