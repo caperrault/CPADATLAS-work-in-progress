@@ -46,7 +46,6 @@ d3.json("CPAD_percity.json", function(err, ca) {
       .style("stroke-width", 0.5);
 
   var cities = svg.append("g")
-    //  .attr("class", "bubble")
       .selectAll("circle")
       .attr("d", d3.geo.path().projection(projection))
       .data(topojson.feature(ca, ca.objects.CPAD_cities).features)
