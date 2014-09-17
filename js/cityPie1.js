@@ -37,7 +37,7 @@ d3.csv("CPAD_50cities_accessType.csv", function (dataset) {
                         .on("mouseover", function(d, i) {
                         div.transition().duration(300).style("opacity", 1);
                         div.text(dataset[i].Access_type+": "+d.value+"%")
-                          .style("left", (d3.event.pageX - div.text.length*132) + "px")
+                          .style("left", (d3.event.pageX - div.text.length*80) + "px")
                           .style("top", (d3.event.pageY -30) + "px");})
                           .on("mouseout", function () { div.transition().duration(300).style("opacity", 0);
                           });
