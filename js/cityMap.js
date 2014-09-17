@@ -1,4 +1,4 @@
-var selectedCity;
+var selectedCity = "Sacramento";
 
 function cityClass(name) {
   d3.select(".selectedCity").classed("selectedCity", false);
@@ -53,10 +53,12 @@ d3.json("CPAD_percity.json", function(err, ca) {
       .append("circle")
       .attr("class", "geo")
       .attr("transform", function(d) { return "translate(" + cityPoints.centroid(d) + ")"; })
-      .attr("r", 4)
-      .style("fill", "black")
-      .style("opacity", 0.6)
+      .sort(function(a, b) { return b.properties.ac_tot - a.properties.ac_tot; })
+      .style("fill", "#239743")
+      .style("opacity", 0.8)
       .classed("Mcity", true)
+      .attr("r", function (d) { return radius(d.properties.ac_tot)*2})
+      .classed("selectedCity", function(d) {return selectedCity === d.properties.Name;})
       .on("mouseover", function(d) {
       div.transition().duration(300).style("opacity", 1);
       div.text(d.properties.Name)
@@ -73,28 +75,6 @@ d3.json("CPAD_percity.json", function(err, ca) {
       updateCityInh(d3.format(",")(d.properties.POP_NORM));
       });
 
-  /*var zoom = d3.geo.zoom()
-  .projection(projection)
-  .scaleExtent([projection.scale(), projection.scale() * 4])
-  .on("zoom.redraw", function() {
-    d3.event.sourceEvent.preventDefault();
-    svg.selectAll("path").attr("d", d3.geo.path().projection(projection));
-    svg.selectAll(".Mcity")
-    .attr("transform", function(d) { return "translate(" + cityPoints.centroid(d) + ")"; })
-  });
-  d3.selectAll("path").call(zoom);*/
-
-  /*function center() {
-       var theGraph = d3.select("#cityMapSvg");
-       zoom.translate([0, 0]);
-       zoom.scale(1);
-       theGraph.transition()
-           .duration(750)
-           .attr("transform", "translate(0, 0)scale(1)");
-   }*/
-
-  /*d3.select("#UI").append("button").attr("type","button").on("click",center).html("Center");*/
-
   var legendTot = d3.select("#cityMapSvg")
       .append("g")
       .attr("class", "mapLegend")
@@ -104,8 +84,7 @@ d3.json("CPAD_percity.json", function(err, ca) {
       .selectAll("g")
       .data([30e3, 100e3])
       .enter()
-      .append("g")
-      .style("display", "none");
+      .append("g");
 
   legendTot.append("circle")
       .attr("cy", function(d) { return - radius(d); })
@@ -144,10 +123,7 @@ d3.selectAll(".radioCity").on("change", function(){
   if (document.getElementById("ac_totCity").checked) {
         cities.sort(function(a, b) { return b.properties.ac_tot - a.properties.ac_tot; })
              .transition().duration(250)
-             .style("fill", "#239743")
-             .style("opacity", 0.8)
              .attr("r", function (d) { return radius(d.properties.ac_tot)*2});
-
         legendPop.style("display", "none").transition().duration(300);
         legendTot.style("display", null).transition().duration(300);
              }
@@ -155,10 +131,7 @@ d3.selectAll(".radioCity").on("change", function(){
   else if (document.getElementById("POP_NORMCity").checked) {
         cities.sort(function(a, b) { return b.properties.POP_NORM - a.properties.POP_NORM; })
              .transition().duration(250)
-             .style("fill", "#239743")
-             .style("opacity", 0.8)
              .attr("r", function (d) { return radius(d.properties.POP_NORM)*8});
-
         legendTot.style("display", "none").transition().duration(300);
         legendPop.style("display", null).transition().duration(300);
              }

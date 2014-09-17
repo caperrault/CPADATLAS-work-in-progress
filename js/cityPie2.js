@@ -8,11 +8,6 @@ d3.csv("CPAD_50cities_agencyLevel.csv", function (dataset) {
                .attr("class", "pieTooltip")
                .style("opacity", 0);
 
-               var enterClockwise = {
-                   startAngle: 0,
-                   endAngle: 0
-                 };
-
                var color = d3.scale.ordinal()
                                    .range(["#2171b5", "#6baed6", "#008F85", "#00A99D","#88419d", "#fd8d3c", "#993404", "#E0E0E0"])
                                    .domain(d3.range(0,8));
@@ -29,6 +24,7 @@ d3.csv("CPAD_50cities_agencyLevel.csv", function (dataset) {
                            .outerRadius(radius - 20);
 
                var pie2 = d3.layout.pie()
+                           .value(function(d) { return d.Sacramento; })
                            .sort(null);
 
                var path = svg.datum(dataset).selectAll("path")
@@ -36,17 +32,9 @@ d3.csv("CPAD_50cities_agencyLevel.csv", function (dataset) {
                              .enter().append("path")
                              .attr("fill", function(d, i) { return color(i); })
                              .classed("chart", true)
-                             .attr("d", arc(enterClockwise))
-                             .each(function(d) {
-                                   this._current = {
-                                     data: d.data,
-                                     value: d.value,
-                                     startAngle: enterClockwise.startAngle,
-                                     endAngle: enterClockwise.endAngle
-                                   }
-                                 })
+                             .attr("d", arc)
+                             .each(function(d) { this._current = d; })
                              .attr("data-legend",function(d) { return d.Agency_lev})
-                             .style("display", "none")
                              .on("mouseover", function(d, i) {
                              div.transition().duration(300).style("opacity", 1);
                              div.text(dataset[i].Agency_lev+": "+d.value+"%")
@@ -62,8 +50,7 @@ d3.csv("CPAD_50cities_agencyLevel.csv", function (dataset) {
                 .selectAll("g")
                 .data(color.domain())
                 .enter().append("g")
-                .attr("transform", function(d, i) { return "translate(220," + i * 20 + ")"; })
-                .style("display", "none");
+                .attr("transform", function(d, i) { return "translate(220," + i * 20 + ")"; });
 
                 legend.append("rect")
                 .attr("y", Math.min(width, height) / 2 - 53)
@@ -82,8 +69,7 @@ d3.csv("CPAD_50cities_agencyLevel.csv", function (dataset) {
 
                 var titleCityPie2 = d3.select("#cityPie2").append("svg")
                                   .attr("x", 220)
-                                  .attr("y", Math.min(width, height) / 2 - 78)
-                                  .style("display", "none");
+                                  .attr("y", Math.min(width, height) / 2 - 78);
 
                   titleCityPie2.append("text")
                   .attr("fill", "black")
@@ -100,9 +86,6 @@ d3.csv("CPAD_50cities_agencyLevel.csv", function (dataset) {
                  };
 
                  function setValue(value) {
-                   path.style("display", null);
-                   legend.style("display", null);
-                   titleCityPie2.style("display", null);
                    pie2.value(function(d) { return d[value]; });
                    path = path.data(pie2);
                    path.transition().duration(750).attrTween("d", arcTween);

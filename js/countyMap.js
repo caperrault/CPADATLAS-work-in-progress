@@ -1,4 +1,4 @@
-var selectedCounty;
+var selectedCounty = "Los Angeles";
 
 function countyClass(name) {
   d3.select(".selectedCounty").classed("selectedCounty", false);
@@ -32,7 +32,7 @@ d3.json("caFields11.json", function(err, ca) {
     .interpolate(d3.interpolateRgb);*/
 
   var colorPOP = d3.scale.linear()
-    .domain([0.01, 2.08, 368])
+    .domain([39, 7103, 393000])
     .range(['rgb(255,245,96)','rgb(205,211,0)','rgb(35,132,67)'])
     .interpolate(d3.interpolateRgb);
 
@@ -60,7 +60,6 @@ d3.json("caFields11.json", function(err, ca) {
       .attr("height", LegendH)
       .attr("x", 0)
       .attr("y", 420);
-      //.style("display", "none");
 
   var gradient = svg.append("svg:defs")
     .append("svg:linearGradient")
@@ -129,6 +128,7 @@ else if (document.getElementById("POP_NORMCounty").checked) {
             .attr("d",path)
             .classed("geoOverlay", true)
             .classed("McountyOverlay", true)
+            .classed("selectedCounty", function(d) {return selectedCounty === d.properties.name;})
             .on("mouseover", function(d) {
             div.transition().duration(300).style("opacity", 1);
             div.text(d.properties.name+" County")

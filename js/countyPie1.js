@@ -33,6 +33,7 @@ d3.csv("Access_type_allcounties_perc.csv", function (dataset) {
                       .outerRadius(radius - 20);
 
           var pie = d3.layout.pie()
+                      .value(function(d) { return d["Los Angeles"]; })
                       .sort(null);
 
           var path = svg.datum(dataset).selectAll("path")
@@ -40,17 +41,9 @@ d3.csv("Access_type_allcounties_perc.csv", function (dataset) {
                         .enter().append("path")
                         .attr("fill", function(d, i) { return color(i); })
                         .classed("chart", true)
-                        .attr("d", arc(enterClockwise))
-                        .each(function(d) {
-                              this._current = {
-                                data: d.data,
-                                value: d.value,
-                                startAngle: enterClockwise.startAngle,
-                                endAngle: enterClockwise.endAngle
-                              }
-                            })
+                        .attr("d", arc)
+                        .each(function(d) { this._current = d; })
                         .attr("data-legend",function(d) { return d.Access_type})
-                        .style("display", "none")
                         .on("mouseover", function(d, i) {
                         div.transition().duration(300).style("opacity", 1);
                         div.text(dataset[i].Access_type+": "+d.value+"%")
@@ -66,8 +59,7 @@ d3.csv("Access_type_allcounties_perc.csv", function (dataset) {
           .selectAll("g")
           .data(color.domain())
           .enter().append("g")
-          .attr("transform", function(d, i) { return "translate(220," + i * 20 + ")"; })
-          .style("display", "none");
+          .attr("transform", function(d, i) { return "translate(220," + i * 20 + ")"; });
 
           legend.append("rect")
           .attr("y", Math.min(width, height) / 2 - 53)
@@ -86,8 +78,7 @@ d3.csv("Access_type_allcounties_perc.csv", function (dataset) {
 
           var titlePie1 = d3.select("#countyPie1").append("svg")
                             .attr("x", 220)
-                            .attr("y", Math.min(width, height) / 2 - 78)
-                            .style("display", "none");
+                            .attr("y", Math.min(width, height) / 2 - 78);
 
             titlePie1.append("text")
             .attr("fill", "black")

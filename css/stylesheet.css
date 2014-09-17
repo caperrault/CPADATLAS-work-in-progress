@@ -42,19 +42,9 @@ h3 {
 }
 
 #tutorial {
-  margin-top: 5px;
-  padding-left: 40px;
+  margin-top: 15px;
+  padding-left: 50px;
   float: left;
-}
-
-#imageLegend {
-  width: 250px;
-  padding-left: 300px;
-}
-
-#imageLegendContainer {
-  padding-top: 70px;
-  width: 540px;
 }
 
 .Mcounty {

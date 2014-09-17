@@ -115,23 +115,14 @@
               <br>
               CPAD's 49 million acres of land are distributed in different ways for each of the state's 58 counties and 500 cities - some counties are almost completely CPAD lands while others have very little such land, and comparing to population provides another view.
             </p>
-            <div id="imageLegendContainer">
-              <p id="imageLegend">
-              <span style="font-size:12px"> <em>Click the maps and tables below to get facts and figures about CPAD areas as shown on this image</em> <span style="font-size:9px">&#x25b6 </span></span>
-              </p>
-            </div>
           </div>
           <div id="tutorial">
-            <img src="CPADAtlasIllustration350px.jpg">
+            <img src="ilikenightFlickr_MtDiabloOak.jpg" height="250px">
           </div>
 
           <h3>CPAD Data per County</h3>
 
           <div id="countyChapter">
-
-            <div class="content">
-              <p>Click any county.</p>
-            </div>
 
             <form id="countyNav" class="switch switch-blue">
                 <input type="radio" class="countyDiv2" name="viewCountyTab" id="county1" checked>
@@ -274,6 +265,7 @@
                     .attr("transform", function (d, i){
                       return "translate(0," + (i) * (fieldHeight+1) + ")";
                     })
+                    .classed("selectedCounty", function(d) {return selectedCounty === d.County;})
                     .on("click", function(d) {
                                             selectedCounty = d.County;
                                             countyClass(d.County);
@@ -419,10 +411,6 @@
 
       <div id="cityChapter">
 
-        <div class="content">
-          <p>Click any of the 50 cities with the most CPAD acres, or most acres per person.</p>
-        </div>
-
         <form id="cityNav" class="switch switch-blue">
             <input type="radio" class="cityDiv2" name="viewCityTab" id="city1" checked>
             <label for="city1" class="switch-label switch-label-off">Map View</label>
@@ -439,7 +427,7 @@
 
           <div>
             <form class="mapScale">
-              <label><input type="Radio" name="dataset" id="ac_totCity" class="radioCity" value="ac_tot"> Total CPAD Acreage</label>
+              <label><input type="Radio" name="dataset" id="ac_totCity" class="radioCity" value="ac_tot" checked> Total CPAD Acreage</label>
               <label><input type="Radio" name="dataset" id="POP_NORMCity" class="radioCity" value="POP_NORM"> CPAD Acres per Inhabitant</label>
             </form>
           </div>
@@ -561,6 +549,7 @@
               // create rows
               var rowsEnter = rows.enter().append("svg:g")
                 .attr("class", "Tcity")
+                .classed("selectedCity", function(d) {return selectedCity === d.City;})
                 .attr("transform", function (d, i){
                   return "translate(0," + (i) * (fieldHeight+1) + ")";
                 })
