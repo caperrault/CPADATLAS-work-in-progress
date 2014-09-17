@@ -1,0 +1,292 @@
+[
+  {
+    "County":"Alameda",
+    "Total CPAD Acreage":476565,
+    "CPAD Acres per 1,000 Inh.":330.0901197
+  },
+  {
+    "County":"Alpine",
+    "Total CPAD Acreage":474266,
+    "CPAD Acres per 1,000 Inh.":392604.255
+  },
+  {
+    "County":"Amador",
+    "Total CPAD Acreage":387827,
+    "CPAD Acres per 1,000 Inh.":11049.20202
+  },
+  {
+    "County":"Butte",
+    "Total CPAD Acreage":1073263,
+    "CPAD Acres per 1,000 Inh.":5282.561689
+  },
+  {
+    "County":"Calaveras",
+    "Total CPAD Acreage":662840,
+    "CPAD Acres per 1,000 Inh.":16344.63736
+  },
+  {
+    "County":"Yolo",
+    "Total CPAD Acreage":653450,
+    "CPAD Acres per 1,000 Inh.":3874.363541
+  },
+  {
+    "County":"Contra Costa",
+    "Total CPAD Acreage":481394,
+    "CPAD Acres per 1,000 Inh.":507.3632518
+  },
+  {
+    "County":"Del Norte",
+    "Total CPAD Acreage":648861,
+    "CPAD Acres per 1,000 Inh.":23588.94542
+  },
+  {
+    "County":"El Dorado",
+    "Total CPAD Acreage":1144947,
+    "CPAD Acres per 1,000 Inh.":7325.364703
+  },
+  {
+    "County":"Fresno",
+    "Total CPAD Acreage":3850607,
+    "CPAD Acres per 1,000 Inh.":4816.829811
+  },
+  {
+    "County":"Glenn",
+    "Total CPAD Acreage":849132,
+    "CPAD Acres per 1,000 Inh.":32099.64887
+  },
+  {
+    "County":"Humboldt",
+    "Total CPAD Acreage":2293951,
+    "CPAD Acres per 1,000 Inh.":18131.4239
+  },
+  {
+    "County":"Imperial",
+    "Total CPAD Acreage":2868458,
+    "CPAD Acres per 1,000 Inh.":20149.18599
+  },
+  {
+    "County":"Inyo",
+    "Total CPAD Acreage":6546558,
+    "CPAD Acres per 1,000 Inh.":364812.3951
+  },
+  {
+    "County":"Kern",
+    "Total CPAD Acreage":5221435,
+    "CPAD Acres per 1,000 Inh.":7891.596201
+  },
+  {
+    "County":"Kings",
+    "Total CPAD Acreage":890800,
+    "CPAD Acres per 1,000 Inh.":6880.839595
+  },
+  {
+    "County":"Lassen",
+    "Total CPAD Acreage":3021450,
+    "CPAD Acres per 1,000 Inh.":89318.03111
+  },
+  {
+    "County":"Los Angeles",
+    "Total CPAD Acreage":2611372,
+    "CPAD Acres per 1,000 Inh.":274.3228553
+  },
+  {
+    "County":"Madera",
+    "Total CPAD Acreage":1377575,
+    "CPAD Acres per 1,000 Inh.":11189.88451
+  },
+  {
+    "County":"Marin",
+    "Total CPAD Acreage":336285,
+    "CPAD Acres per 1,000 Inh.":1359.886323
+  },
+  {
+    "County":"Mariposa",
+    "Total CPAD Acreage":935607,
+    "CPAD Acres per 1,000 Inh.":54618.02084
+  },
+  {
+    "County":"Mendocino",
+    "Total CPAD Acreage":2247878,
+    "CPAD Acres per 1,000 Inh.":26057.82292
+  },
+  {
+    "County":"Merced",
+    "Total CPAD Acreage":1261432,
+    "CPAD Acres per 1,000 Inh.":5991.013542
+  },
+  {
+    "County":"Modoc",
+    "Total CPAD Acreage":2689712,
+    "CPAD Acres per 1,000 Inh.":284655.7335
+  },
+  {
+    "County":"Mono",
+    "Total CPAD Acreage":2003703,
+    "CPAD Acres per 1,000 Inh.":155893.8108
+  },
+  {
+    "County":"Monterey",
+    "Total CPAD Acreage":2121212,
+    "CPAD Acres per 1,000 Inh.":5279.772061
+  },
+  {
+    "County":"Napa",
+    "Total CPAD Acreage":505857,
+    "CPAD Acres per 1,000 Inh.":4070.319255
+  },
+  {
+    "County":"Nevada",
+    "Total CPAD Acreage":623852,
+    "CPAD Acres per 1,000 Inh.":6778.566153
+  },
+  {
+    "County":"Orange",
+    "Total CPAD Acreage":508921,
+    "CPAD Acres per 1,000 Inh.":178.8017381
+  },
+  {
+    "County":"Placer",
+    "Total CPAD Acreage":960108,
+    "CPAD Acres per 1,000 Inh.":3865.18566
+  },
+  {
+    "County":"Plumas",
+    "Total CPAD Acreage":1672709,
+    "CPAD Acres per 1,000 Inh.":80326.01887
+  },
+  {
+    "County":"Riverside",
+    "Total CPAD Acreage":4673122,
+    "CPAD Acres per 1,000 Inh.":3023.917274
+  },
+  {
+    "County":"Sacramento",
+    "Total CPAD Acreage":636078,
+    "CPAD Acres per 1,000 Inh.":519.8842181
+  },
+  {
+    "County":"San Benito",
+    "Total CPAD Acreage":889408,
+    "CPAD Acres per 1,000 Inh.":16707.52581
+  },
+  {
+    "County":"San Bernardino",
+    "Total CPAD Acreage":12867927,
+    "CPAD Acres per 1,000 Inh.":7527.595205
+  },
+  {
+    "County":"San Diego",
+    "Total CPAD Acreage":2712151,
+    "CPAD Acres per 1,000 Inh.":963.8636503
+  },
+  {
+    "County":"San Francisco",
+    "Total CPAD Acreage":30238,
+    "CPAD Acres per 1,000 Inh.":38.93006304
+  },
+  {
+    "County":"San Joaquin",
+    "Total CPAD Acreage":912595,
+    "CPAD Acres per 1,000 Inh.":1619.230175
+  },
+  {
+    "County":"San Luis Obispo",
+    "Total CPAD Acreage":2124267,
+    "CPAD Acres per 1,000 Inh.":8611.394357
+  },
+  {
+    "County":"San Mateo",
+    "Total CPAD Acreage":290479,
+    "CPAD Acres per 1,000 Inh.":410.7682691
+  },
+  {
+    "County":"Santa Clara",
+    "Total CPAD Acreage":831659,
+    "CPAD Acres per 1,000 Inh.":494.2746741
+  },
+  {
+    "County":"Santa Cruz",
+    "Total CPAD Acreage":285713,
+    "CPAD Acres per 1,000 Inh.":1117.804856
+  },
+  {
+    "County":"Shasta",
+    "Total CPAD Acreage":2465233,
+    "CPAD Acres per 1,000 Inh.":15100.41497
+  },
+  {
+    "County":"Sierra",
+    "Total CPAD Acreage":615316,
+    "CPAD Acres per 1,000 Inh.":173084.7612
+  },
+  {
+    "County":"Siskiyou",
+    "Total CPAD Acreage":4062266,
+    "CPAD Acres per 1,000 Inh.":91696.93447
+  },
+  {
+    "County":"Solano",
+    "Total CPAD Acreage":544111,
+    "CPAD Acres per 1,000 Inh.":1379.09646
+  },
+  {
+    "County":"Sonoma",
+    "Total CPAD Acreage":1016737,
+    "CPAD Acres per 1,000 Inh.":2216.978335
+  },
+  {
+    "County":"Stanislaus",
+    "Total CPAD Acreage":970173,
+    "CPAD Acres per 1,000 Inh.":2170.423946
+  },
+  {
+    "County":"Sutter",
+    "Total CPAD Acreage":389436,
+    "CPAD Acres per 1,000 Inh.":4933.939894
+  },
+  {
+    "County":"Tehama",
+    "Total CPAD Acreage":1892926,
+    "CPAD Acres per 1,000 Inh.":33778.71791
+  },
+  {
+    "County":"Trinity",
+    "Total CPAD Acreage":2052766,
+    "CPAD Acres per 1,000 Inh.":157638.3289
+  },
+  {
+    "County":"Tulare",
+    "Total CPAD Acreage":3099338,
+    "CPAD Acres per 1,000 Inh.":8421.633634
+  },
+  {
+    "County":"Tuolumne",
+    "Total CPAD Acreage":1457657,
+    "CPAD Acres per 1,000 Inh.":26745.50747
+  },
+  {
+    "County":"Colusa",
+    "Total CPAD Acreage":740383,
+    "CPAD Acres per 1,000 Inh.":39373.67852
+  },
+  {
+    "County":"Yuba",
+    "Total CPAD Acreage":411821,
+    "CPAD Acres per 1,000 Inh.":6838.719236
+  },
+  {
+    "County":"Ventura",
+    "Total CPAD Acreage":1189161,
+    "CPAD Acres per 1,000 Inh.":1578.818316
+  },
+  {
+    "County":"Santa Barbara",
+    "Total CPAD Acreage":1760915,
+    "CPAD Acres per 1,000 Inh.":4409.486282
+  },
+  {
+    "County":"Lake",
+    "Total CPAD Acreage":850980,
+    "CPAD Acres per 1,000 Inh.":14594.31999
+  }
+]
