@@ -11,7 +11,7 @@ function countyClass(name) {
     .transition().duration(300);
 }
 
-d3.json("caFields11.json", function(err, ca) {
+d3.json("CPAD_counties.json", function(err, ca) {
 
   var div = d3.select("body").append("div")
   .attr("class", "mapTooltip")
@@ -141,7 +141,7 @@ else if (document.getElementById("POP_NORMCounty").checked) {
             updateCountyPie1(d.properties.name);
             updateCountyPie2(d.properties.name);
             updateCountyName(d.properties.name);
-            updateCountyTot(d3.format(",")(d.properties.ac_tot));
+            updateCountyTot(d3.format(",")(d.properties.ac_tot),d3.format(",")(d.properties.Tot_Pop));
             updateCountyInh(d3.format(",")(d.properties.POP_NORM));
           });
 

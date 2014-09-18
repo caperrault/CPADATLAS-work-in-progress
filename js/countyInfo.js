@@ -33,7 +33,22 @@ d3.csv("Agency_lev_allcounties_perc5.csv", function (dataset) {
                         .attr("font-size", "18px");
 
                         countyTot.append("countyTotSvg:tspan")
-                        .text(" CPAD acres")
+                        .text(" CPAD acres / Total Population: ")
+                        .attr("text-anchor", "left")
+                        .attr("y","65%")
+                        .attr("fill", "#444")
+                        .attr("font-size", "12px");
+
+                        countyTot.append("countyTotSvg:tspan")
+                        .text("9,840,024")
+                        .attr("text-anchor", "left")
+                        .attr("y","65%")
+                        .attr("fill", "#444")
+                        .attr("font-weight", "bold")
+                        .attr("font-size", "18px");
+
+                        countyTot.append("countyTotSvg:tspan")
+                        .text(" inhabitants")
                         .attr("text-anchor", "left")
                         .attr("y","65%")
                         .attr("fill", "#444")
@@ -89,7 +104,7 @@ function setCountyValue(name) {
                 .attr("font-size", "32px");
 };
 
-function setTotValue(tot) {
+function setTotValue(tot, totpop) {
 
   countyTotRect = countyTotSvg.append('rect')
                 .attr("width", 600)
@@ -108,7 +123,22 @@ function setTotValue(tot) {
               .attr("font-size", "18px");
 
               countyTot.append("countyTotSvg:tspan")
-              .text(" CPAD acres")
+              .text(" CPAD acres / Total Population: ")
+              .attr("text-anchor", "left")
+              .attr("y","65%")
+              .attr("fill", "#444")
+              .attr("font-size", "12px");
+
+              countyTot.append("countyTotSvg:tspan")
+              .text(totpop)
+              .attr("text-anchor", "left")
+              .attr("y","65%")
+              .attr("fill", "#444")
+              .attr("font-weight", "bold")
+              .attr("font-size", "18px");
+
+              countyTot.append("countyTotSvg:tspan")
+              .text(" inhabitants")
               .attr("text-anchor", "left")
               .attr("y","65%")
               .attr("fill", "#444")

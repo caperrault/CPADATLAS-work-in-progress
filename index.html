@@ -163,7 +163,7 @@
 
                 <script>
 
-                d3.json("Counties_statsCorrected2.json", function(data) {
+                d3.json("Counties_statsCorrected3.json", function(data) {
 
                 var selectedTableHeader;
 
@@ -230,7 +230,8 @@
                     .attr("class", "tableHeader")
                     .attr("transform", function (d, i){
                       return "translate("+ i* fieldWidth + ",0)";
-                    });
+                    })
+                    .style("display", function (d, i) { if (i>=3) {return "none";}});
 
                   header.append("rect")
                     .attr("width", fieldWidth + 30)
@@ -272,7 +273,7 @@
                                             updateCountyPie1(d.County);
                                             updateCountyPie2(d.County);
                                             updateCountyName(d.County);
-                                            updateCountyTot(d3.format(",")(d["Total CPAD Acreage"]));
+                                            updateCountyTot(d3.format(",")(d["Total CPAD Acreage"]),d3.format(",")(d["County Population"]));
                                             updateCountyInh(d3.format(",")(d["CPAD Acres per 1,000 Inh."]));
                                           });
 
