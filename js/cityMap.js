@@ -11,7 +11,7 @@ function cityClass(name) {
     .transition().duration(300);
 }
 
-d3.json("CPAD_percity.json", function(err, ca) {
+d3.json("CAperlargestcities_topo.json", function(err, ca) {
 
   var height = 500;
   var width = 500;
@@ -48,7 +48,7 @@ d3.json("CPAD_percity.json", function(err, ca) {
   var cities = svg.append("g")
       .selectAll("circle")
       .attr("d", d3.geo.path().projection(projection))
-      .data(topojson.feature(ca, ca.objects.CPAD_cities).features)
+      .data(topojson.feature(ca, ca.objects.CA50LargestCities).features)
       .enter()
       .append("circle")
       .attr("class", "geo")
