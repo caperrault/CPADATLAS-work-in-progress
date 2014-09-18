@@ -25,7 +25,7 @@ d3.csv("CPAD_50cities_agencyLevel.csv", function (dataset) {
   cityTot = cityTotSvg.append("cityTotSvg:text")
 
               cityTot.append("cityTotSvg:tspan")
-              .text(5475)
+              .text("5,850")
               .attr("text-anchor", "left")
               .attr("x","0%")
               .attr("y","65%")
@@ -34,7 +34,22 @@ d3.csv("CPAD_50cities_agencyLevel.csv", function (dataset) {
               .attr("font-size", "18px");
 
               cityTot.append("cityTotSvg:tspan")
-              .text(" CPAD acres")
+              .text(" CPAD acres / Total Population: ")
+              .attr("text-anchor", "left")
+              .attr("y","65%")
+              .attr("fill", "#444")
+              .attr("font-size", "12px");
+
+              cityTot.append("cityTotSvg:tspan")
+              .text("467,467")
+              .attr("text-anchor", "left")
+              .attr("y","65%")
+              .attr("fill", "#444")
+              .attr("font-weight", "bold")
+              .attr("font-size", "18px");
+
+              cityTot.append("cityTotSvg:tspan")
+              .text(" inhabitants")
               .attr("text-anchor", "left")
               .attr("y","65%")
               .attr("fill", "#444")
@@ -51,7 +66,7 @@ d3.csv("CPAD_50cities_agencyLevel.csv", function (dataset) {
                 .attr("font-size", "12px");
 
                 cityInh.append("cityInhSvg:tspan")
-                .text(13.5)
+                .text(12.5)
                 .attr("text-anchor", "left")
                 .attr("y","65%")
                 .attr("fill", "#444")
@@ -90,7 +105,7 @@ function setCityValue(name) {
                 .attr("font-size", "32px");
 };
 
-function setCityTotValue(tot) {
+function setCityTotValue(tot, totpop) {
 
   cityTotRect = cityTotSvg.append('rect')
                 .attr("width", 600)
@@ -109,7 +124,22 @@ function setCityTotValue(tot) {
               .attr("font-size", "18px");
 
               cityTot.append("cityTotSvg:tspan")
-              .text(" CPAD acres")
+              .text(" CPAD acres / Total Population: ")
+              .attr("text-anchor", "left")
+              .attr("y","65%")
+              .attr("fill", "#444")
+              .attr("font-size", "12px");
+
+              cityTot.append("cityTotSvg:tspan")
+              .text(totpop)
+              .attr("text-anchor", "left")
+              .attr("y","65%")
+              .attr("fill", "#444")
+              .attr("font-weight", "bold")
+              .attr("font-size", "18px");
+
+              cityTot.append("cityTotSvg:tspan")
+              .text(" inhabitants")
               .attr("text-anchor", "left")
               .attr("y","65%")
               .attr("fill", "#444")

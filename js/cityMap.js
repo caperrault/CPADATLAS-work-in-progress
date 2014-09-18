@@ -71,7 +71,7 @@ d3.json("CAperlargestcities_topo.json", function(err, ca) {
       updateCityPie1(d.properties.Name);
       updateCityPie2(d.properties.Name);
       updateCityName(d.properties.Name);
-      updateCityTot(d3.format(",")(d.properties.ac_tot));
+      updateCityTot(d3.format(",")(d.properties.ac_tot),d3.format(",")(d.properties.Tot_Pop));
       updateCityInh(d3.format(",")(d.properties.POP_NORM));
       });
 
@@ -103,7 +103,7 @@ d3.json("CAperlargestcities_topo.json", function(err, ca) {
       .attr("class", "legend")
       .attr("transform", "translate(" + 30 + "," + (height - 80) + ")")
       .selectAll("g")
-      .data([37e3, 100e3])
+      .data([30e3, 100e3])
       .enter()
       .append("g")
       .style("display", "none");
@@ -116,7 +116,7 @@ d3.json("CAperlargestcities_topo.json", function(err, ca) {
       .attr("y", function(d) { return - 2.06 * radius(d); })
       .attr("dy", "1.3em")
       .style("text-anchor", "middle")
-      .text(function (d) {return d3.format(".1s")(d/30);});
+      .text(function (d) {return d3.format(".1s")(d/1000);});
 
 d3.selectAll(".radioCity").on("change", function(){
 
@@ -131,7 +131,7 @@ d3.selectAll(".radioCity").on("change", function(){
   else if (document.getElementById("POP_NORMCity").checked) {
         cities.sort(function(a, b) { return b.properties.POP_NORM - a.properties.POP_NORM; })
              .transition().duration(250)
-             .attr("r", function (d) { return radius(d.properties.POP_NORM)*8});
+             .attr("r", function (d) { return radius(d.properties.POP_NORM)*30});
         legendTot.style("display", "none").transition().duration(300);
         legendPop.style("display", null).transition().duration(300);
              }
