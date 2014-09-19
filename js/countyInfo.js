@@ -65,7 +65,7 @@ d3.csv("Agency_lev_allcounties_perc5.csv", function (dataset) {
                           .attr("font-size", "12px");
 
                           countyInh.append("countyInhSvg:tspan")
-                          .text(274)
+                          .text(265)
                           .attr("text-anchor", "left")
                           .attr("y","65%")
                           .attr("fill", "#444")

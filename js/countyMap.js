@@ -11,7 +11,7 @@ function countyClass(name) {
     .transition().duration(300);
 }
 
-d3.json("CPAD_counties.json", function(err, ca) {
+d3.json("CPAD_counties2.json", function(err, ca) {
 
   var div = d3.select("body").append("div")
   .attr("class", "mapTooltip")
