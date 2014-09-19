@@ -11,7 +11,7 @@ function cityClass(name) {
     .transition().duration(300);
 }
 
-d3.json("CAperlargestcities_topo.json", function(err, ca) {
+d3.json("CA_perlargestcities_topo.json", function(err, ca) {
 
   var height = 500;
   var width = 500;
@@ -48,7 +48,7 @@ d3.json("CAperlargestcities_topo.json", function(err, ca) {
   var cities = svg.append("g")
       .selectAll("circle")
       .attr("d", d3.geo.path().projection(projection))
-      .data(topojson.feature(ca, ca.objects.CA50LargestCities).features)
+      .data(topojson.feature(ca, ca.objects.CA_50LargestCities).features)
       .enter()
       .append("circle")
       .attr("class", "geo")
@@ -71,8 +71,8 @@ d3.json("CAperlargestcities_topo.json", function(err, ca) {
       updateCityPie1(d.properties.Name);
       updateCityPie2(d.properties.Name);
       updateCityName(d.properties.Name);
-      updateCityTot(d3.format(",")(d.properties.ac_tot),d3.format(",")(d.properties.Tot_Pop));
-      updateCityInh(d3.format(",")(d.properties.POP_NORM));
+      updateCityTot(d3.format(",")(d3.round(d.properties.ac_tot)),d3.format(",")(d.properties.Tot_Pop));
+      updateCityInh(d3.format(",")(d3.round(d.properties.POP_NORM, 1)));
       });
 
   var legendTot = d3.select("#cityMapSvg")

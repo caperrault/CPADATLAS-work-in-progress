@@ -63,7 +63,7 @@ h3 {
   opacity: 1;
   fill: #EF8B6C;
   stroke-width: 0;
-  stroke: #EF8B6C;
+  stroke: #FF7E53;
 }
 
 .Mcity {
@@ -74,7 +74,7 @@ stroke-width: .5px;
 .Mcity.selectedCity {
     fill-opacity: 1;
     stroke-width: 3px;
-    stroke: #EF8B6C;
+    stroke: #FF7E53;
 }
 
 .previousCountyName {
@@ -248,7 +248,7 @@ g .cityTableHeaderSelected {
     font-weight: bold;
     opacity: 1;
     font-size: 14px;
-    fill: #EF8B6C;
+    fill: #FF7E53;
 }
 
 #countyTabs {
@@ -313,7 +313,7 @@ border-left: 1px dotted lightGray;
     font-weight: bold;
     opacity: 1;
     font-size: 14px;
-    fill: #EF8B6C;
+    fill: #FF7E53;
 }
 
 #cityTable{
