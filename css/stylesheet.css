@@ -28,7 +28,7 @@ h2 {
 }
 
 h3 {
-  margin-top: 50px;
+  margin-top: 300px;
   clear: both;
 }
 
@@ -43,6 +43,7 @@ h3 {
 
 #tutorial {
   margin-top: 15px;
+  margin-bottom: 40px;
   padding-left: 50px;
   float: left;
 }
@@ -131,6 +132,12 @@ circle.geo:hover {
 path.chart:hover {
   fill-opacity: 0.8;
   cursor: pointer;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  width: 1000px;
 }
 
 form {
