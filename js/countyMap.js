@@ -31,14 +31,19 @@ d3.json("CPAD_counties2.json", function(err, ca) {
     .range(['rgb(211,211,211)','rgb(211,225,211)','rgb(35,132,67)'])
     .interpolate(d3.interpolateRgb);*/
 
-    var colorTOT = d3.scale.linear()
+    var colorTOT = d3.scale.pow()
         .domain([30237, 993455, 12867928])
         .range(["#ffffbf","#d9ef8b","#1a9850"])
+        //.exponent([3])
         .interpolate(d3.interpolateRgb);
         //["#a50026","#d73027","#f46d43","#fdae61","#fee08b","#ffffbf","#d9ef8b","#a6d96a","#66bd63","#1a9850","#006837"]
         //["#7f3b08","#b35806","#e08214","#fdb863","#fee0b6","#f7f7f7","#d8daeb","#b2abd2","#8073ac","#542788","#2d004b"]
         //["#543005","#8c510a","#bf812d","#dfc27d","#f6e8c3","#f5f5f5","#c7eae5","#80cdc1","#35978f","#01665e","#003c30"]
         //["#ffffe5","#f7fcb9","#d9f0a3","#addd8e","#78c679","#41ab5d","#238443","#006837","#004529"]
+
+  /*var colorTOT = d3.scale.threshold()
+      .domain(ss.jenks(counties2.map(function(d) { return d.properties.ac_tot; }), 9))
+      .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));*/
 
   var colorPOP = d3.scale.linear()
     .domain([39, 7103, 393000])
@@ -129,7 +134,7 @@ d3.selectAll(".radioCounty").on("change", function(){
 
 if (document.getElementById("ac_totCounty").checked) {
         counties.transition().duration(250)
-             .style("fill", function (d) {return colorTOT(d.properties.ac_tot);});
+             .style("fill", function (d) {return colorTOT/*(d.properties.ac_tot)*/;});
         svg.transition().duration(300).style("display", null);
              }
 
