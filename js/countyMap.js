@@ -86,7 +86,7 @@ d3.json("CPAD_counties2.json", function(err, ca) {
       .attr("stop-opacity", 1);
 
   gradient.append("svg:stop")
-      .attr("offset", "100%")
+      .attr("offset", "95%")
       .attr("stop-color", "#ffffbf")
       .attr("stop-opacity", 1);
 
@@ -101,7 +101,7 @@ d3.json("CPAD_counties2.json", function(err, ca) {
       .attr("y","95%")
       .attr("dy",0)
       .style("font-size", "16px")
-      .style("fill", "black")
+      .style("fill", "#444")
       .text("-");
 
   svg.append("text")
@@ -112,6 +112,18 @@ d3.json("CPAD_counties2.json", function(err, ca) {
       .style("font-size", "14px")
       .style("fill", "white")
       .text("+");
+
+  var legendText = d3.select("#countyMapSvg").append("legendText:svg")
+      .attr("width", 50)
+      .attr("height", 30)
+      .attr("x", 25)
+      .attr("y", 398);
+
+  legendText.append("text")
+      .attr("dy",10)
+      .style("font-size", "10px")
+      .style("fill", "#444")
+      .text("Acres");
 
 d3.selectAll(".radioCounty").on("change", function(){
 

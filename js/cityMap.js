@@ -54,7 +54,7 @@ d3.json("CA_perlargestcities_topo.json", function(err, ca) {
       .attr("class", "geo")
       .attr("transform", function(d) { return "translate(" + cityPoints.centroid(d) + ")"; })
       .sort(function(a, b) { return b.properties.ac_tot - a.properties.ac_tot; })
-      .style("fill", "#239743")
+      .style("fill", "#1a9850")
       .style("opacity", 0.8)
       .classed("Mcity", true)
       .attr("r", function (d) { return radius(d.properties.ac_tot)*2})
@@ -117,6 +117,18 @@ d3.json("CA_perlargestcities_topo.json", function(err, ca) {
       .attr("dy", "1.3em")
       .style("text-anchor", "middle")
       .text(function (d) {return d3.format(".1s")(d/1000);});
+
+  var legendText = d3.select("#cityMapSvg").append("legendText:svg")
+      .attr("width", 50)
+      .attr("height", 30)
+      .attr("x", 50)
+      .attr("y", 410);
+
+  legendText.append("text")
+      .attr("dy",10)
+      .style("font-size", "10px")
+      .style("fill", "#444")
+      .text("Acres");
 
 d3.selectAll(".radioCity").on("change", function(){
 
