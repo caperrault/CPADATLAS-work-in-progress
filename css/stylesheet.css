@@ -64,11 +64,17 @@ h3 {
   fill: #fff;
 }
 
+/*.McountyOverlay.selectedCounty {
+  opacity: 1;
+  background: url(white.png);
+
+}*/
+
 .McountyOverlay.selectedCounty {
   opacity: 1;
-  fill: #EF8B6C;
+  fill: #EF6C72;
   stroke-width: 0;
-  stroke: #FF7E53;
+  stroke: #EF6C72;
 }
 
 .Mcity {
@@ -79,7 +85,7 @@ stroke-width: .5px;
 .Mcity.selectedCity {
     fill-opacity: 1;
     stroke-width: 3px;
-    stroke: #FF7E53;
+    stroke: #EF6C72;
 }
 
 .previousCountyName {
@@ -259,7 +265,7 @@ g .cityTableHeaderSelected {
     font-weight: bold;
     opacity: 1;
     font-size: 14px;
-    fill: #FF7E53;
+    fill: #EF6C72;
 }
 
 #countyTabs {
@@ -324,7 +330,7 @@ border-left: 1px dotted lightGray;
     font-weight: bold;
     opacity: 1;
     font-size: 14px;
-    fill: #FF7E53;
+    fill: #EF6C72;
 }
 
 #cityTable{
