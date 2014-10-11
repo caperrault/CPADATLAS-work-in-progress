@@ -72,9 +72,10 @@ h3 {
 
 .McountyOverlay.selectedCounty {
   opacity: 1;
-  fill: #EF6C72;
-  stroke-width: 0;
+  fill: none;
+  stroke-width: 2;
   stroke: #EF6C72;
+  stroke-opacity:0.9;
 }
 
 .Mcity {

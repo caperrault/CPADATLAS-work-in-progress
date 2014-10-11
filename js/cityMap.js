@@ -134,18 +134,18 @@ d3.selectAll(".radioCity").on("change", function(){
 
   if (document.getElementById("ac_totCity").checked) {
         cities.sort(function(a, b) { return b.properties.ac_tot - a.properties.ac_tot; })
-             .transition().duration(250)
+             .transition().duration(600)
              .attr("r", function (d) { return radius(d.properties.ac_tot)*2});
-        legendPop.style("display", "none").transition().duration(300);
-        legendTot.style("display", null).transition().duration(300);
+        legendPop.style("display", "none").transition().duration(600);
+        legendTot.style("display", null).transition().duration(600);
              }
 
   else if (document.getElementById("POP_NORMCity").checked) {
         cities.sort(function(a, b) { return b.properties.POP_NORM - a.properties.POP_NORM; })
-             .transition().duration(250)
+             .transition().duration(600)
              .attr("r", function (d) { return radius(d.properties.POP_NORM)*30});
-        legendTot.style("display", "none").transition().duration(300);
-        legendPop.style("display", null).transition().duration(300);
+        legendTot.style("display", "none").transition().duration(600);
+        legendPop.style("display", null).transition().duration(600);
              }
            });
 });

@@ -52,7 +52,7 @@ d3.json("CPAD_counties2.json", function(err, ca) {
     .interpolate(d3.interpolateRgb);
 
   var projection = d3.geo.albers()
-      .translate([70, 210])
+      .translate([72, 210])
       .scale(2700)
       .rotate([122.4183, 0])
       .center([0, 37.7750]);
@@ -61,8 +61,7 @@ d3.json("CPAD_counties2.json", function(err, ca) {
 
   var group = svg.selectAll('g')
           .data(topojson.feature(ca, ca.objects.counties2).features)
-          .enter()
-          .append('g')
+          .enter();
 
   var path = d3.geo.path().projection(projection);
 
@@ -134,7 +133,7 @@ d3.selectAll(".radioCounty").on("change", function(){
 
 if (document.getElementById("ac_totCounty").checked) {
         counties.transition().duration(250)
-             .style("fill", function (d) {return colorTOT/*(d.properties.ac_tot)*/;});
+             .style("fill", function (d) {return colorTOT(d.properties.ac_tot);});
         svg.transition().duration(300).style("display", null);
              }
 
