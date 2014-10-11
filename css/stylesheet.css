@@ -64,15 +64,9 @@ h3 {
   fill: #fff;
 }
 
-/*.McountyOverlay.selectedCounty {
-  opacity: 1;
-  background: url(white.png);
-
-}*/
-
 .McountyOverlay.selectedCounty {
   opacity: 1;
-  fill: none;
+  fill-opacity: 0;
   stroke-width: 2;
   stroke: #EF6C72;
   stroke-opacity:0.9;
