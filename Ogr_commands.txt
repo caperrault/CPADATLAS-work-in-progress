@@ -1,0 +1,13 @@
+ogr2ogr -f GeoJSON Last_Segment.json Last_Segment.shp
+topojson -o caFields10_topo.json caFields10.json
+
+topojson -e Counties_stats.csv --id-property name -p -o caFields.json counties2.json
+topojson -e Counties_statsCorrected4formap.csv --id-property=County,name -p -o CPAD_counties2.json counties2.json
+
+
+topojson -p -o CA_perlargestcities_topo.json ca_shape.json CA_50LargestCities.json
+
+
+
+
+topojson --id-property su_a3 -p name=NAME -p name -o uk.json subunits.json places.json
